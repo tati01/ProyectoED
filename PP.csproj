@@ -64,9 +64,16 @@
     <Compile Include="Formularios\frmAgregarCarrito.Designer.cs">
       <DependentUpon>frmAgregarCarrito.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmProcesarEmpaque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProcesarEmpaque.Designer.cs">
+      <DependentUpon>frmProcesarEmpaque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\caArticuloServicio.cs" />
     <Compile Include="Models\ccArticulo.cs" />
     <Compile Include="Models\ccArticuloServicio.cs" />
+    <Compile Include="Models\cGlobal.cs" />
     <Compile Include="Models\clArticulo.cs" />
     <Compile Include="Models\clArticuloServicio.cs" />
     <Compile Include="Models\cpArticulo.cs" />
@@ -81,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPaginaPrincipal.resx">
       <DependentUpon>frmPaginaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProcesarEmpaque.resx">
+      <DependentUpon>frmProcesarEmpaque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
