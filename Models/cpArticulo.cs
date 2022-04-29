@@ -46,5 +46,7 @@ namespace PP.Models
             this.ArticuloArriba = null;
             this.ArticuloAbajo = null;
         }
+
+        public void prueba() { }
     }
 }
