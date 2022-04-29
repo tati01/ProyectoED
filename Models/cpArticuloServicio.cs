@@ -8,7 +8,7 @@ namespace PP.Models
 {
     public class cpArticuloServicio
     {
-
+        //commit
         public static cpArticulo PrimerArticulo { get; set; }
         public int Cantidad = 0;
 
