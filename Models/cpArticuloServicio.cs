@@ -32,18 +32,30 @@ namespace PP.Models
             }
         }
 
-        public bool pop()
+        public cpArticulo pop()
         {
+            cpArticulo temp = new cpArticulo();
             if (Cantidad > 0)
             {
-                PrimerArticulo = PrimerArticulo.ArticuloAbajo;
-                PrimerArticulo.ArticuloArriba = null;
-                Cantidad--;
-                return true;
+                if (PrimerArticulo.ArticuloArriba == null)
+                {
+                    PrimerArticulo = PrimerArticulo;
+                    PrimerArticulo.ArticuloArriba = temp;
+                    Cantidad--;
+                    return PrimerArticulo;
+                }
+                else
+                {
+                    PrimerArticulo = PrimerArticulo.ArticuloAbajo;
+                    PrimerArticulo.ArticuloArriba = temp;
+                    Cantidad--;
+                    return PrimerArticulo;
+                }
+
             }
             else
             {
-                return false;
+                return PrimerArticulo;
             }
         }
 

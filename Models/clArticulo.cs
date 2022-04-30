@@ -44,5 +44,9 @@
             this.Anterior = null;
         }
 
+        public string toString() {
+            return this.Codigo + " " + this.Descripcion + " " + this.Marca + " " + this.Precio + " " + this.Cantidad + " " + this.Total + "\n";
+        }
+
     }
 }

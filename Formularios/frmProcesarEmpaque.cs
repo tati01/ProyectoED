@@ -54,7 +54,8 @@ namespace PP.Formularios
             p = clArticuloServicio.primerNodo;
             while (p != null)
             {
-                dgv_Lista.Rows.Add(p.Marca, p.Descripcion, p.Precio.ToString());
+
+                dgv_Lista.Rows.Add(p.Marca, p.Descripcion, p.Cantidad,p.Precio.ToString(),p.Total,p.Codigo);
                 p = p.Siguiente;
             }
 
@@ -66,7 +67,7 @@ namespace PP.Formularios
                 puntero = mCola.primero;
                 do
                 {
-                    dgv_PilaLista.Rows.Add(puntero.Marca, puntero.Descripcion, puntero.Precio.ToString());
+                    dgv_PilaLista.Rows.Add(puntero.Marca, puntero.Descripcion,puntero.Cantidad, puntero.Precio.ToString(),puntero.Total,puntero.Codigo);
                     puntero = puntero.Siguiente;
                 }
                 while (puntero != null);
@@ -83,29 +84,36 @@ namespace PP.Formularios
         private void btnEmpacar_Click_1(object sender, EventArgs e)
         {
             clArticulo _p = new clArticulo();
-            _p = mCola.primero;
 
-            if (_p != null)
+            _p = mCola.primero;
+            while (_p != null)
             {
-                cpArticulo Pila = new cpArticulo();
+                cpArticulo mPila = new cpArticulo();
                 try
                 {
-                    Pila.Codigo = _p.Codigo;
-                    Pila.Descripcion = _p.Descripcion;
-                    Pila.Marca = _p.Marca;
-                    Pila.Precio = _p.Precio;
-                    Pila.Cantidad = _p.Cantidad;
-                    Pila.Total = _p.Total;
-                    cGlobal.mPilaArticuloServicio.push(Pila);
+                    mPila.Codigo = _p.Codigo;
+                    mPila.Descripcion = _p.Descripcion;
+                    mPila.Marca = _p.Marca;
+                    mPila.Precio = _p.Precio;
+                    mPila.Cantidad = _p.Cantidad;
+                    mPila.Total = _p.Total;
+
+                    cGlobal.mPilaArticuloServicio.push(mPila);
                     _p = _p.Siguiente;
-                    dgv_Apilado.Rows.Add(Pila.Marca, Pila.Descripcion, Pila.Marca, Pila.Precio, Pila.Total, Pila.Codigo);
-                    mPila.Push(_p);
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
+                
 
+            }
+            for (int x = cGlobal.mPilaArticuloServicio.Cantidad; x > 0; x--) {
+                cpArticulo _temp = new cpArticulo();
+                _temp = cGlobal.mPilaArticuloServicio.pop();
+                dgv_Apilado.Rows.Add(_temp.Marca, _temp.Descripcion, _temp.Cantidad, _temp.Precio, _temp.Total, _temp.Codigo);
+                
             }
         }
     }
