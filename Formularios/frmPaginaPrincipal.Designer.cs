@@ -36,6 +36,7 @@
             this.procesarCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empaqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procesarEmpaqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +98,8 @@
             // 
             // empaqueToolStripMenuItem
             // 
+            this.empaqueToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.procesarEmpaqueToolStripMenuItem});
             this.empaqueToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empaqueToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.empaqueToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("empaqueToolStripMenuItem.Image")));
@@ -112,6 +115,13 @@
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(162, 34);
             this.facturacionToolStripMenuItem.Text = "Facturacion";
+            // 
+            // procesarEmpaqueToolStripMenuItem
+            // 
+            this.procesarEmpaqueToolStripMenuItem.Name = "procesarEmpaqueToolStripMenuItem";
+            this.procesarEmpaqueToolStripMenuItem.Size = new System.Drawing.Size(296, 38);
+            this.procesarEmpaqueToolStripMenuItem.Text = "Procesar Empaque";
+            this.procesarEmpaqueToolStripMenuItem.Click += new System.EventHandler(this.procesarEmpaqueToolStripMenuItem_Click);
             // 
             // PaginaPrincipal
             // 
@@ -145,6 +155,7 @@
         private System.Windows.Forms.ToolStripMenuItem procesarCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empaqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem procesarEmpaqueToolStripMenuItem;
     }
 }
 

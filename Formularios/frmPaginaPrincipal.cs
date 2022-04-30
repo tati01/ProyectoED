@@ -56,5 +56,12 @@ namespace PP
 
             Application.Exit();
         }
+
+        private void procesarEmpaqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProcesarEmpaque mFrmProcesarEmpaque = new frmProcesarEmpaque();
+            mFrmProcesarEmpaque.MdiParent = this;
+            mFrmProcesarEmpaque.Show();
+        }
     }
 }
